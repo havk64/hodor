@@ -13,10 +13,7 @@ import (
 	"net/url"
 )
 
-func cookie() string {
-	return "564599e6478332473dbb28a942390d163cd79e26"
-
-}
+var cookie = "564599e6478332473dbb28a942390d163cd79e26"
 
 //===--Function parsedURL()------------------------------------------------===//
 // parsedURL() is used to define the URL.
@@ -45,7 +42,7 @@ func clientPost() (q *url.Values) {
 	q := &url.Values{
 		"id":          []string{"23"},
 		"holdthedoor": []string{"Submit"},
-		"key":         []string{"564599e6478332473dbb28a942390d163cd79e26"},
+		"key":         []string{cookie},
 	}
 	return
 }
@@ -58,12 +55,8 @@ func customHeader() http.Header {
 	return http.Header{
 		"User-Agent":   []string{"Windows NT 1000.1.1.1.1.1 - (I'm kidding, I hate windows! Lol!)"},
 		"Content-type": []string{"application/x-www-form-urlencoded"},
-		"Cookie":       []string{"HoldTheDoor=564599e6478332473dbb28a942390d163cd79e26"},
-		"Referer": []string{
-			"http://173.246.108.142/level2.php",
-		},
-		"Connection": []string{
-			"keep-alive",
-		},
+		"Cookie":       []string{"HoldTheDoor=" + cookie},
+		"Referer":      []string{"http://173.246.108.142/level2.php"},
+		"Connection":   []string{"keep-alive"},
 	}
 }
