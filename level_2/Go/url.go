@@ -41,9 +41,13 @@ func parsedURL() *url.URL {
 //===--Function clientPost()-----------------------------------------------===//
 // clientPost() is used to fill the form for que POST request.
 //===----------------------------------------------------------------------===//
-func clientPost() *url.Values {
-	q := &url.Values{"id": []string{"23"}, "holdthedoor": []string{"Submit"}, "key": []string{"564599e6478332473dbb28a942390d163cd79e26"}}
-	return q
+func clientPost() (q *url.Values) {
+	q := &url.Values{
+		"id":          []string{"23"},
+		"holdthedoor": []string{"Submit"},
+		"key":         []string{"564599e6478332473dbb28a942390d163cd79e26"},
+	}
+	return
 }
 
 //===--Function customHeader()---------------------------------------------===//
