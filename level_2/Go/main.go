@@ -59,7 +59,7 @@ func check(e error) {
 }
 
 //===--Function main()-----------------------------------------------------===//
-// main() calls the function vote 1024 times waiting 100 milliseconds to avoid
+// main() calls the function vote 1024 times waiting 50 milliseconds to avoid
 // to have too many open files all at once.
 // It uses goroutines to make asyncronous requests and WaitGroup to syncronize
 // all requests and return at the end.
@@ -68,17 +68,17 @@ func main() {
 	start := time.Now()
 	var wg sync.WaitGroup
 	vote := connect()
-	const total = (1 << 10)
+	const total = (1 << 10) // Using bitwise left shift operator to get the value of 1024 times
 	for i := 0; i < total; i++ {
 		wg.Add(1)
-		time.Sleep(50 * time.Millisecond) // Makes one request each 25 milliseconds(to avoid too many open files)
+		time.Sleep(50 * time.Millisecond) // Makes one request each 50 milliseconds(to avoid too many open files)
 		go func(i int) {                  // Starting the goroutines.
 			defer wg.Done()
 			vote(i)
 		}(i)
 	}
 	wg.Wait()
-	defer fmt.Println("1024 votes confirmed in user 23 in: ", time.Since(start))
+	defer fmt.Println("1024 votes confirmed for user 23 in: ", time.Since(start))
 }
 
 //===--Function connect()-----------------------------------------------------===//
