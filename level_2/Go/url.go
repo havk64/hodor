@@ -39,7 +39,7 @@ func parsedURL() *url.URL {
 // clientPost() is used to fill the form for que POST request.
 //===----------------------------------------------------------------------===//
 func clientPost() (q *url.Values) {
-	q := &url.Values{
+	q = &url.Values{
 		"id":          []string{"23"},
 		"holdthedoor": []string{"Submit"},
 		"key":         []string{cookie},
