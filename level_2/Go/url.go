@@ -24,14 +24,9 @@ var cookie = "564599e6478332473dbb28a942390d163cd79e26"
 func parsedURL() *url.URL {
 
 	return &url.URL{
-		Scheme:   "http",
-		Opaque:   "",
-		User:     (*url.Userinfo)(nil),
-		Host:     "173.246.108.142",
-		Path:     "/level2.php",
-		RawPath:  "",
-		RawQuery: "",
-		Fragment: "",
+		Scheme: "http",
+		Host:   "173.246.108.142",
+		Path:   "/level2.php",
 	}
 }
 
