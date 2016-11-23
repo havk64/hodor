@@ -40,9 +40,9 @@ func parsedURL() *url.URL {
 //===----------------------------------------------------------------------===//
 func clientPost() (q *url.Values) {
 	q = &url.Values{
-		"id":          []string{"23"},
-		"holdthedoor": []string{"Submit"},
-		"key":         []string{cookie},
+		"id":          {"23"},
+		"holdthedoor": {"Submit"},
+		"key":         {cookie},
 	}
 	return
 }
@@ -51,12 +51,12 @@ func clientPost() (q *url.Values) {
 // customHeader() is used to define the request Header without function helpers.
 // It uses the format of the http.Header Struct used by net/http package.
 //===----------------------------------------------------------------------===//
-func customHeader() http.Header {
-	return http.Header{
-		"User-Agent":   []string{"Windows NT 1000.1.1.1.1.1 - (I'm kidding, I hate windows! Lol!)"},
-		"Content-type": []string{"application/x-www-form-urlencoded"},
-		"Cookie":       []string{"HoldTheDoor=" + cookie},
-		"Referer":      []string{"http://173.246.108.142/level2.php"},
-		"Connection":   []string{"keep-alive"},
+func customHeader() *http.Header {
+	return &http.Header{
+		"User-Agent":   {"Windows NT 1000.1.1.1.1.1"},
+		"Content-type": {"application/x-www-form-urlencoded"},
+		"Cookie":       {"HoldTheDoor=" + cookie},
+		"Referer":      {"http://173.246.108.142/level2.php"},
+		"Connection":   {"keep-alive"},
 	}
 }
