@@ -4,6 +4,10 @@ A progressive HTTP security challenge solved in multiple programming languages, 
 
 The premise: submit 1024 votes to a remote server. The catch: each level adds a new layer of protection you must reverse-engineer and bypass — cookies, header inspection, CAPTCHAs, and IP-based rate limiting.
 
+I had so much fun solving those challenges!
+
+Thank you for that [Julien Barbier](https://github.com/jbarbier)!
+
 ---
 
 ## The Challenge
@@ -41,6 +45,7 @@ Each level was solved in as many languages as possible, exploring how different 
 | C | ✓ | ✓ | ✓ | | |
 | PHP | ✓ | ✓ | ✓ | | |
 | Erlang | ✓ | ✓ | ✓ | | |
+| Jupyter Notebook | ✓ | | | | |
 | Java | ✓ | | | | |
 | Haskell | ✓ | | | | |
 | OCaml | ✓ | | | | |
@@ -66,7 +71,7 @@ This was implemented in both Python (using `requests` + a Tesseract wrapper) and
 ## Structure
 
 ```
-level_0/    # Basic POST — 19 languages
+level_0/    # Basic POST — 20 languages (Wow, I was sick!)
 level_1/    # + Cookie auth
 level_2/    # + Header inspection
 level_3/    # + CAPTCHA (OCR)
